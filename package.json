@@ -1,5 +1,5 @@
 {
-  "name": "extension-page-for-hatena-bookmark",
+  "name": "webextension-build-link-plain",
   "description": "My spectacular module",
   "version": "0.0.0",
   "author": {
@@ -33,7 +33,7 @@
   ],
   "license": "MIT",
   "private": true,
-  "repository": "dogwalk/extension-page-for-hatena-bookmark",
+  "repository": "dogwalk/webextension-build-link-plain",
   "scripts": {
     "changelog": "conventional-changelog -i changelog.md --same-file --preset angular",
     "eclint": "globstar --ignore \"node_modules/**\" -- eclint check \"*.{js,yml,md,json}\"",
