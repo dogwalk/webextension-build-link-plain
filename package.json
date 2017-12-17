@@ -7,7 +7,9 @@
     "email": "o.gata.ken@gmail.com",
     "url": "sane.jp"
   },
-  "dependencies": {},
+  "dependencies": {
+    "webextension-polyfill": "^0.2.1"
+  },
   "devDependencies": {
     "conventional-changelog-cli": "*",
     "copy-concurrently": "^1.0.5",
