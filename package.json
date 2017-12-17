@@ -20,7 +20,7 @@
     "power-assert": "*"
   },
   "engines": {
-    "node": ">=6.0.0"
+    "node": ">=8.0.0"
   },
   "files": [
     "index.js"
@@ -29,7 +29,8 @@
     ""
   ],
   "license": "MIT",
-  "repository": "sanemat/extension-page-for-hatena-bookmark",
+  "private": true,
+  "repository": "dogwalk/extension-page-for-hatena-bookmark",
   "scripts": {
     "changelog": "conventional-changelog -i changelog.md --same-file --preset angular",
     "eclint": "globstar --ignore \"node_modules/**\" -- eclint check \"*.{js,yml,md,json}\"",
