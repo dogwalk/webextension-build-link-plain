@@ -1,13 +1,19 @@
 const rimraf = require('rimraf');
 const pify = require('pify');
 const copy = require('copy-concurrently');
+const path = require('path');
 
 const targets = ['dist-firefox', 'dist-chrome'];
+const files = ['package.json', 'license', 'changelog.md'];
 
-for (const target of targets) {
+Promise.all(targets.map((target) => {
   Promise.resolve().then(() => {
     return pify(rimraf)(target);
   }).then(() => {
-    return copy('src', `dist-${target}`);
+    return copy('src', target);
+  }).then(() => {
+    return Promise.all(files.map((file) => {
+      return copy(file, path.join(target, file));
+    }));
   });
-}
+}));
