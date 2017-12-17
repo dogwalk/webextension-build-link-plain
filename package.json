@@ -23,7 +23,7 @@
     "node": ">=8.0.0"
   },
   "files": [
-    "index.js"
+    "src/index.js"
   ],
   "keywords": [
     ""
