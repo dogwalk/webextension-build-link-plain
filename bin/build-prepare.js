@@ -4,7 +4,7 @@ const copy = require('copy-concurrently');
 const path = require('path');
 
 const targets = ['dist-firefox', 'dist-chrome'];
-const files = ['package.json', 'license', 'changelog.md'];
+const files = ['package.json', 'package-lock.json', 'license', 'changelog.md'];
 
 Promise.all(targets.map((target) => {
   Promise.resolve().then(() => {
