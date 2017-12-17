@@ -5,7 +5,7 @@ const path = require('path');
 const spawn = require('cross-spawn');
 
 const targets = ['dist-firefox', 'dist-chrome'];
-const files = ['package.json', 'package-lock.json', 'license', 'changelog.md'];
+const files = ['package.json', 'package-lock.json', 'license', 'changelog.md', 'readme.md'];
 
 Promise.all(targets.map((target) => {
   Promise.resolve().then(() => {
