@@ -9,7 +9,7 @@ const files = ['package.json', 'package-lock.json', 'license', 'changelog.md', '
 
 Promise.resolve().then(() => {
   return Promise.all(targets.map((target) => {
-    Promise.resolve().then(() => {
+    return Promise.resolve().then(() => {
       return pify(rimraf)(target);
     }).then(() => {
       return copy('src', target);
