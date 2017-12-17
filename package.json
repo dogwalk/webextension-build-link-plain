@@ -13,13 +13,10 @@
     "copy-concurrently": "^1.0.5",
     "eclint": "*",
     "eslint": "*",
-    "espower-loader": "*",
     "fixpack": "*",
     "globstar": "*",
-    "mocha": "*",
     "npm-check-updates": "*",
     "pify": "^3.0.0",
-    "power-assert": "*",
     "rimraf": "^2.6.2"
   },
   "engines": {
@@ -42,7 +39,6 @@
     "git:tag": "git tag v${npm_package_version}",
     "lint": "npm run eclint && npm run eslint",
     "ncu": "ncu -u",
-    "test": "mocha --require ./enable-power-assert.js -- ./test.js",
-    "verify": "npm run lint && npm run test"
+    "verify": "npm run lint"
   }
 }
