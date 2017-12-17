@@ -11,6 +11,7 @@
   "devDependencies": {
     "conventional-changelog-cli": "*",
     "copy-concurrently": "^1.0.5",
+    "cross-spawn": "^5.1.0",
     "eclint": "*",
     "eslint": "*",
     "fixpack": "*",
