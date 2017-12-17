@@ -10,6 +10,7 @@
   "dependencies": {},
   "devDependencies": {
     "conventional-changelog-cli": "*",
+    "copy-concurrently": "^1.0.5",
     "eclint": "*",
     "eslint": "*",
     "espower-loader": "*",
@@ -17,7 +18,9 @@
     "globstar": "*",
     "mocha": "*",
     "npm-check-updates": "*",
-    "power-assert": "*"
+    "pify": "^3.0.0",
+    "power-assert": "*",
+    "rimraf": "^2.6.2"
   },
   "engines": {
     "node": ">=8.0.0"
