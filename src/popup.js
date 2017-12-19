@@ -1,0 +1,2 @@
+const popup = () => {};
+popup();

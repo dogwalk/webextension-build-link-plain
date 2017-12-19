@@ -20,7 +20,8 @@
     "globstar": "*",
     "npm-check-updates": "*",
     "pify": "^3.0.0",
-    "rimraf": "^2.6.2"
+    "rimraf": "^2.6.2",
+    "webpack": "^3.10.0"
   },
   "engines": {
     "node": ">=8.0.0"
@@ -35,9 +36,11 @@
   "private": true,
   "repository": "dogwalk/webextension-build-link-plain",
   "scripts": {
+    "build:chrome": "webpack --config webpack.config.chrome.js",
+    "build:firefox": "webpack --config webpack.config.firefox.js",
     "changelog": "conventional-changelog -i changelog.md --same-file --preset angular",
     "eclint": "globstar --ignore \"node_modules/**\" -- eclint check \"*.{js,yml,md,json}\"",
-    "eslint": "eslint .",
+    "eslint": "eslint . --ignore-path .gitignore",
     "fixpack": "fixpack",
     "git:tag": "git tag v${npm_package_version}",
     "lint": "npm run eclint && npm run eslint",
