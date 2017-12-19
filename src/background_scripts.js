@@ -1,2 +1,0 @@
-const background = () => {};
-background();
