@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Build Link Plain",
-  "version": "OVERRIDE",
+  "version": "0.0.0",
   "description": "Build a plain link from the selected text or the current page's title.",
   "homepage_url": "https://github.com/dogwalk/webextension-build-link-plain",
   "icons": {
@@ -19,5 +19,9 @@
       "64": "filter3-64.png"
     },
     "default_title": "Build"
-  }
+  },
+  "content_scripts": [{
+    "matches": ["<all_urls>"],
+    "js": ["content_script.js"]
+  }]
 }
