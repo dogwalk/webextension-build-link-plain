@@ -12,7 +12,7 @@ Promise.resolve().then(() => {
     return Promise.resolve().then(() => {
       return pify(rimraf)(target);
     }).then(() => {
-      return copy('src', target);
+      return copy('webextension', target);
     }).then(() => {
       return Promise.all(files.map((file) => {
         return copy(file, path.join(target, file));
