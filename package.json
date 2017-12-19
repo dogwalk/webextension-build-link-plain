@@ -36,8 +36,8 @@
   "private": true,
   "repository": "dogwalk/webextension-build-link-plain",
   "scripts": {
-    "build:chrome": "webpack -c webpack.config.chrome.js",
-    "build:firefox": "webpack -c webpack.config.firefox.js",
+    "build:chrome": "webpack --config webpack.config.chrome.js",
+    "build:firefox": "webpack --config webpack.config.firefox.js",
     "changelog": "conventional-changelog -i changelog.md --same-file --preset angular",
     "eclint": "globstar --ignore \"node_modules/**\" -- eclint check \"*.{js,yml,md,json}\"",
     "eslint": "eslint .",
