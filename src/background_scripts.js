@@ -1,1 +1,2 @@
-window.alert('background');
+const background = () => {};
+background();

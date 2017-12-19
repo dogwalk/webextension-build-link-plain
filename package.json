@@ -40,7 +40,7 @@
     "build:firefox": "webpack --config webpack.config.firefox.js",
     "changelog": "conventional-changelog -i changelog.md --same-file --preset angular",
     "eclint": "globstar --ignore \"node_modules/**\" -- eclint check \"*.{js,yml,md,json}\"",
-    "eslint": "eslint .",
+    "eslint": "eslint . --ignore-path .gitignore",
     "fixpack": "fixpack",
     "git:tag": "git tag v${npm_package_version}",
     "lint": "npm run eclint && npm run eslint",
