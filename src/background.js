@@ -1,3 +1,4 @@
+browser = require('webextension-polyfill'); // eslint-disable-line no-global-assign
 /**
  * There was an error executing the script.
  * Display the error message.
