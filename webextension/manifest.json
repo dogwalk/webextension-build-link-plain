@@ -20,10 +20,6 @@
     },
     "default_title": "Build"
   },
-  "content_scripts": [{
-    "matches": ["<all_urls>"],
-    "js": ["content_script.js"]
-  }],
   "background": {
     "scripts": ["background.js"]
   }
