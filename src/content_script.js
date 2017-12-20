@@ -10,5 +10,5 @@
     result.push(title);
   }
   result.push(url);
-  browser.runtime.sendMessage(result);
+  prompt('created link', result.join(' '));
 })();

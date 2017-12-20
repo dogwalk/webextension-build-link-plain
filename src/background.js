@@ -12,12 +12,3 @@ function gatherPageInfo() {
 }
 
 browser.browserAction.onClicked.addListener(gatherPageInfo);
-
-function notify(message) {
-  console.log(message.join(' ')); // eslint-disable-line no-console
-}
-
-/*
-Assign `notify()` as a listener to messages from the content script.
-*/
-browser.runtime.onMessage.addListener(notify);
