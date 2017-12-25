@@ -1,7 +1,7 @@
 {
   "name": "webextension-build-link-plain",
   "description": "My spectacular module",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "author": {
     "name": "Sanemat",
     "email": "o.gata.ken@gmail.com",
@@ -37,8 +37,11 @@
   "private": true,
   "repository": "dogwalk/webextension-build-link-plain",
   "scripts": {
+    "build:all": "npm run build:prepare && npm run build:firefox && npm run build:chrome && npm run build:tomanifest",
     "build:chrome": "webpack --config webpack.config.chrome.js",
     "build:firefox": "webpack --config webpack.config.firefox.js",
+    "build:prepare": "node bin/build-prepare.js",
+    "build:tomanifest": "node bin/to-manifest.js",
     "changelog": "conventional-changelog -i changelog.md --same-file --preset angular",
     "eclint": "globstar --ignore \"node_modules/**\" -- eclint check \"*.{js,yml,md,json}\"",
     "eslint": "eslint . --ignore-path .gitignore",
