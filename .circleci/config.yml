@@ -1,0 +1,53 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/node:9.3.0
+    steps:
+      - checkout
+      - run: npm install
+      - run: npm run verify
+  package:
+    machine:
+      enabled: true
+    steps:
+      - checkout
+      - run: npm install
+      - run: npm run build:all
+      - run:
+          command: |
+            cd dist-firefox
+            npx web-ext build
+            npx web-ext sign --api-key $AMO_JWT_ISSUER --api-secret $AMO_JWT_SECRET
+      - persist_to_workspace:
+          root: dist-firefox
+          paths:
+            - web-ext-artifacts/*
+  deploy:
+    docker:
+      - image: circleci/golang:1.9.2
+    steps:
+      - attach_workspace:
+          at: dist-firefox/web-ext-artifacts
+      - run:
+          name: prepare ghr
+          command: |
+            go get -u github.com/rhysd/go-github-selfupdate/cmd/go-get-release
+            go-get-release github.com/tcnksm/ghr
+      - run: ghr -u $CIRCLE_PROJECT_USERNAME -r $CIRCLE_PROJECT_REPONAME $CIRCLE_TAG dist-firefox/web-ext-artifacts
+workflows:
+  version: 2
+  build_and_test:
+    jobs:
+      - build
+      - package:
+          requires:
+            - build
+      - deploy:
+          requires:
+            - package
+          filters:
+            tags:
+              only: /.*/
+            branches:
+              ignore: /.*/

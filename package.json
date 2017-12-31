@@ -14,7 +14,6 @@
   "devDependencies": {
     "conventional-changelog-cli": "*",
     "copy-concurrently": "^1.0.5",
-    "cross-spawn": "^5.1.0",
     "eclint": "*",
     "eslint": "*",
     "fixpack": "*",
@@ -22,6 +21,7 @@
     "npm-check-updates": "*",
     "pify": "^3.0.0",
     "rimraf": "^2.6.2",
+    "web-ext": "^2.2.2",
     "webpack": "^3.10.0"
   },
   "engines": {
