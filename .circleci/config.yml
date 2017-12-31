@@ -17,6 +17,7 @@ jobs:
       - run:
           command: |
             cd dist-firefox
+            cat manifest.json
             npx web-ext build
             npx web-ext sign --api-key $AMO_JWT_ISSUER --api-secret $AMO_JWT_SECRET
 workflows:
