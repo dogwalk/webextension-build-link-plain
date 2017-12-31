@@ -7,7 +7,7 @@ const targets = ['dist-firefox', 'dist-chrome'];
 let packageMeta;
 let manifest;
 Promise.resolve().then(() => {
-  return pify(fs.readFile)('packageMeta.json', 'utf-8');
+  return pify(fs.readFile)('package.json', 'utf-8');
 }).then(data => {
   packageMeta = JSON.parse(data);
 }).then(() => {
@@ -21,4 +21,5 @@ Promise.resolve().then(() => {
   }));
 }).catch(error => {
   console.error(error);// eslint-disable-line no-console
+  process.exit(1);
 });
