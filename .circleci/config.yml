@@ -20,9 +20,9 @@ jobs:
             npx web-ext build
             npx web-ext sign --api-key $AMO_JWT_ISSUER --api-secret $AMO_JWT_SECRET
       - persist_to_workspace:
-          root: dist-firefox/web-ext-artifacts
+          root: dist-firefox
           paths:
-            - *
+            - web-ext-artifacts/*
   deploy:
     docker:
       - image: circleci/go:1.9.2
