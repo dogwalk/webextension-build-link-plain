@@ -34,8 +34,7 @@ jobs:
           command: |
             go get -u github.com/rhysd/go-github-selfupdate/cmd/go-get-release
             go-get-release github.com/tcnksm/ghr
-            echo $CIRCLE_TAG
-      - run: ghr -u $CIRCLE_PROJECT_USERNAME -r $CIRCLE_PROJECT_REPONAME $CIRCLE_TAG dist-firefox/web-ext-artifacts
+      - run: ghr -u $CIRCLE_PROJECT_USERNAME -r $CIRCLE_PROJECT_REPONAME $CIRCLE_TAG dist-firefox/web-ext-artifacts/*
 workflows:
   version: 2
   build_and_deploy:
