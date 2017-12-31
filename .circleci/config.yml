@@ -26,10 +26,10 @@ jobs:
   deploy:
     docker:
       - image: circleci/go:1.9.2
-      - steps:
-          - attach_workspace:
-              at: dist-firefox/web-ext-artifacts
-          - run: ls -al dist-firefox/web-ext-artifacts
+    steps:
+      - attach_workspace:
+          at: dist-firefox/web-ext-artifacts
+      - run: ls -al dist-firefox/web-ext-artifacts
 workflows:
   version: 2
   build_and_test:
