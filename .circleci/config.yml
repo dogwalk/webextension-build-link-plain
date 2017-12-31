@@ -14,26 +14,29 @@ jobs:
       - checkout
       - run: npm install
       - run: npm run build:all
+      - run: mkdir -p dist
       - run:
           command: |
             cd dist-firefox
-            npx web-ext build
+            npx web-ext build -a ../dist
+            cd ../dist
+            ls *.zip | xargs -I {} mv {} firefox-{}
       - persist_to_workspace:
-          root: dist-firefox
+          root: dist
           paths:
-            - web-ext-artifacts/*
+            - firefox*
   deploy:
     docker:
       - image: circleci/golang:1.9.2
     steps:
       - attach_workspace:
-          at: dist-firefox/web-ext-artifacts
+          at: dist
       - run:
           name: prepare ghr
           command: |
             go get -u github.com/rhysd/go-github-selfupdate/cmd/go-get-release
             go-get-release github.com/tcnksm/ghr
-      - run: ghr -u $CIRCLE_PROJECT_USERNAME -r $CIRCLE_PROJECT_REPONAME $CIRCLE_TAG dist-firefox/web-ext-artifacts/*
+      - run: ghr -u $CIRCLE_PROJECT_USERNAME -r $CIRCLE_PROJECT_REPONAME $CIRCLE_TAG dist/*
 workflows:
   version: 2
   build_and_deploy:
