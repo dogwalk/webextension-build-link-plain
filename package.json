@@ -38,11 +38,9 @@
   "private": true,
   "repository": "dogwalk/webextension-build-link-plain",
   "scripts": {
-    "build:all": "npm run build:prepare && npm run build:firefox && npm run build:chrome && npm run build:tomanifest",
+    "build:all": "npm run build:firefox && npm run build:chrome",
     "build:chrome": "webpack --config webpack.config.chrome.js",
     "build:firefox": "webpack --config webpack.config.firefox.js",
-    "build:prepare": "node bin/build-prepare.js",
-    "build:tomanifest": "node bin/to-manifest.js",
     "changelog": "conventional-changelog -i changelog.md --same-file --preset angular",
     "clear:all": "npm run clear:dist && npm run clear:firefox && npm run clear:chrome",
     "clear:chrome": "rimraf dist-chrome",
