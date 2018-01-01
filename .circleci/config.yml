@@ -16,9 +16,9 @@ jobs:
       - run: npm run clear:all && npm run prepare:all && npm run build:all && npm run manifest:all
       - run: npm run package
       - persist_to_workspace:
-          root: dist
+          root: .
           paths:
-            - *.zip
+            - dist/*
   deploy:
     docker:
       - image: circleci/golang:1.9.2
