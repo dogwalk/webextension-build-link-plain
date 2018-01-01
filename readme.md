@@ -7,6 +7,14 @@
 
 ## Install
 
+### firefox
+
+[Build Link Plain](https://addons.mozilla.org/en-US/firefox/addon/build-link-plain/)
+
+
+### chrome
+
+[Build Link Plain](https://chrome.google.com/webstore/detail/build-link-plain/kifbjfleedknkdhmnfgikpcdhbkcefpe?hl=en)
 
 
 ## Changelog
