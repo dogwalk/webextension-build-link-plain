@@ -13,22 +13,12 @@ jobs:
     steps:
       - checkout
       - run: npm install
-      - run: npm run build:all
-      - run: mkdir -p dist
-      - run:
-          command: |
-            cd dist-firefox
-            npx web-ext build -a ../dist
-            cd ../dist
-            ls *.zip | xargs -I {} mv {} firefox-{}
-      - run:
-          command: |
-            zip -r dist/chrome-build-link-plain-$CIRCLE_TAG.zip dist-chrome
+      - run: npm run clear:all && npm run prepare:all && npm run build:all && npm run manifest:all
+      - run: npm run package
       - persist_to_workspace:
-          root: dist
+          root: .
           paths:
-            - firefox*
-            - chrome*
+            - dist/*
   deploy:
     docker:
       - image: circleci/golang:1.9.2
