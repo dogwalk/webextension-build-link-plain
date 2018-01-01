@@ -53,7 +53,7 @@
     "eclint": "globstar --ignore \"node_modules/**\" -- eclint check \"*.{js,yml,md,json}\"",
     "eslint": "eslint . --ignore-path .gitignore",
     "fixpack": "fixpack",
-    "git:tag": "git tag v${npm_package_version}",
+    "git:tag": "git tag -a v${npm_package_version} -m \"Release for ${npm_package_version}\"",
     "lint": "npm run eclint && npm run eslint",
     "manifest:all": "npm run manifest:firefox && npm run manifest:chrome",
     "manifest:chrome": "node bin/update-manifest.js dist-chrome",
